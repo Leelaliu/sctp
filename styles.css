@@ -32,6 +32,7 @@ body {
     display: flex;  /* 使用弹性布局 */
     flex-direction: column;  /* 垂直排列内容 */
     align-items: center;  /* 居中对齐内容 */
+    overflow-y: auto;  /* 当内容超出时显示垂直滚动条 */
 }
 
 /* 侧边栏标题样式 */
@@ -87,7 +88,7 @@ body {
 /* 漫画标题样式 */
 .comic-title {
     font-size: 1.5rem;  /* 标题字体大小 */
-    margin: 15px 0;  /* 上下外边距 */
+    margin: 15px 15px;  /* 上下外边距 */
     color: #1E90FF;  /* 深蓝色字体 */
     font-weight: bold;  /* 加粗字体 */
     padding: 10px;  /* 内边距 */

@@ -130,8 +130,8 @@ body {
 }
 
 .comic-title {
-    font-size: 18px; /* 修改标题字体大小 */
-    margin-left: 10px; /* 留出间距，使文字在图片右侧显示 */
+    font-size: 12px; /* 修改标题字体大小 */
+    margin-left: 2px; /* 留出间距，使文字在图片右侧显示 */
     color: #1E90FF;
     font-weight: bold;
 }

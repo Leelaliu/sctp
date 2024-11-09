@@ -14,7 +14,7 @@ body {
 }
 
 .sidebar {
-    width: 430px; /* 缩小宽度到约原来的五分之四 */
+    width: 50px; /* 缩小宽度到约原来的五分之四 */
     padding: 20px;
     background-color: #E6F2FF; /* 浅蓝色侧边栏背景 */
     border-right: 4px solid #A3C7E8; /* 边框蓝色，宽度加倍 */
@@ -147,22 +147,6 @@ body {
         height: auto;
     }
 
-    .sidebar-toggle {
-        display: block; /* 显示菜单按钮 */
-        background-color: #1E90FF;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-
-    /* 侧边栏隐藏和展开 */
-    .sidebar {
-        display: none; /* 默认隐藏侧边栏 */
-    }
-
-    .sidebar.open {
-        display: block; /* 展开侧边栏 */
-    }
+  
 }
 

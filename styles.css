@@ -117,6 +117,35 @@ body {
 
 /* 隐藏菜单字样 */
 @media (max-width: 768px) {
+    body {
+        font-size: calc(1em * 0.67); /* 缩小字体到原来的三分之二 */
+    }
+
+    .sidebar {
+        padding-left: calc(20px * 0.67); /* 左右边距缩小2/3 */
+        padding-right: calc(20px * 0.67);
+    }
+
+    .sidebar h2 {
+        font-size: calc(24px * 0.67); /* 标题字号缩小为三分之二 */
+    }
+
+    .sidebar a {
+        font-size: calc(20px * 0.67); /* 导航链接字号缩小为三分之二 */
+        padding-left: calc(8px * 0.67); /* 链接左右边距缩小2/3 */
+        padding-right: calc(8px * 0.67);
+    }
+
+    .comic-title {
+        font-size: calc(12px * 0.67); /* 图片标题字号缩小为三分之二 */
+    }
+
+    .content {
+        padding-left: calc(20px * 0.67); /* 内容区域左右边距缩小2/3 */
+        padding-right: calc(20px * 0.67);
+    }
+
+    
     .menu-text {
         display: none; /* 小屏幕上隐藏菜单 */
     }

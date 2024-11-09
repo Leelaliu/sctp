@@ -121,6 +121,29 @@ body {
         font-size: calc(1em * 0.67); /* 缩小字体到原来的三分之二 */
     }
 
+
+    /* 导航栏文字不分行 */
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+    font-size: 15px; /* 根据你的需求调整文字大小 */
+    color: #4682B4;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    white-space: nowrap; /* 阻止文字换行 */
+}
+
+/* 增大图片上的文字 */
+.comic-title {
+    font-size: 24px; /* 将原字号放大为两倍 */
+    margin-left: 2px; 
+    color: #1E90FF;
+    font-weight: bold;
+}
+
+    
     .sidebar {
         padding-left: calc(20px * 0.67); /* 左右边距缩小2/3 */
         padding-right: calc(20px * 0.67);

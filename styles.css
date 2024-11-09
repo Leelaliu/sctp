@@ -84,11 +84,10 @@ body {
     align-items: center;  /* 垂直居中对齐内容 */
     justify-content: space-between;  /* 内容间距均匀分布 */
 }
-
 /* 漫画标题样式 */
 .comic-title {
     font-size: 1.5rem;  /* 标题字体大小 */
-    margin: 15px 15px;  /* 上下外边距 */
+    margin: 15px 15px 20px;  /* 上下外边距，底部留出更多空间 */
     color: #1E90FF;  /* 深蓝色字体 */
     font-weight: bold;  /* 加粗字体 */
     padding: 10px;  /* 内边距 */
@@ -142,6 +141,7 @@ body {
     cursor: pointer;  /* 鼠标悬停显示手型 */
 }
 
+
 /* 响应式设计：在屏幕宽度小于768px时应用 */
 @media (max-width: 768px) {
     body {
@@ -153,7 +153,7 @@ body {
         width: 100%;  /* 侧边栏宽度自适应 */
         height: auto;  /* 高度自动 */
         flex-direction: row;  /* 水平排列内容 */
-        overflow-x: auto;  /* 内容超出时横向滚动 */
+        overflow-y: auto;  /* 内容超出时滚动 */
     }
 
     .sidebar h2, .sidebar a {

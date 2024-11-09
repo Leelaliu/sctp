@@ -30,7 +30,7 @@ body {
     position: sticky;
     top: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  /* 确保始终垂直排列内容 */
     align-items: center;
     overflow-y: auto;  /* 允许导航栏上下滚动 */
 }
@@ -144,20 +144,20 @@ body {
 @media (max-width: 768px) {
     body {
         font-size: 0.9em;
-        flex-direction: column;
+        flex-direction: column;  /* 小屏幕上切换为纵向布局 */
     }
 
     .sidebar {
         width: 100%;
         height: auto;
-        flex-direction: row;
-        overflow-x: auto;
+        flex-direction: column;  /* 保持垂直排列 */
+        overflow-y: auto;  /* 允许竖直滚动 */
     }
 
     .sidebar h2, .sidebar a {
         font-size: 1rem;
         padding: 5px;
-        white-space: nowrap;
+        white-space: nowrap;  /* 阻止文字换行 */
     }
 
     .content {

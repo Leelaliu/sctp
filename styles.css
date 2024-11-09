@@ -115,37 +115,53 @@ body {
     cursor: pointer;
 }
 
-/* 手机端及小屏幕设备 */
+/* 隐藏菜单字样 */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column; /* 将 body 布局改为垂直 */
+    .menu-text {
+        display: none; /* 小屏幕上隐藏菜单 */
     }
+}
 
-    .sidebar {
-        width: 100%; /* 侧边栏宽度调整为 100% */
-        position: relative; /* 去掉 sticky，使侧边栏可展开收起 */
-        height: auto;
-        border-right: none; /* 移除右边框 */
-    }
+/* 调整集数文本与图片的布局 */
+.comic-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    .content {
-        width: 100%;
-        padding: 10px;
-    }
+.comic-title {
+    font-size: 18px; /* 修改标题字体大小 */
+    margin-left: 10px; /* 留出间距，使文字在图片右侧显示 */
+    color: #1E90FF;
+    font-weight: bold;
+}
 
+/* 统一图片大小 */
+.comic-image {
+    width: 150px; /* 设定图片的固定宽度 */
+    height: auto; /* 高度自适应，保持比例 */
+    border: 5px solid #B0E0E6;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
     .comic-container {
-        max-width: 100%; /* 内容区域自适应宽度 */
-        margin-bottom: 10px;
-    }
-
-    .comic-title {
-        font-size: 18px; /* 修改标题字体大小 */
+        flex-direction: column; /* 小屏幕下，图片和标题垂直排列 */
+        align-items: center;
     }
 
     .comic-image {
-        width: 100%; /* 确保图片自适应 */
-        height: auto;
+        width: 100%; /* 小屏幕下图片宽度自适应 */
     }
+
+    .comic-title {
+        margin-left: 0; /* 小屏幕下去除左边距 */
+        text-align: center;
+    }
+}
+
 
   
 }

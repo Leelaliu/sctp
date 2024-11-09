@@ -72,6 +72,7 @@ body {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden; /* 防止在小屏幕上水平滚动 */
 }
 
 /* 漫画容器样式 */
@@ -80,6 +81,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     position: relative;  /* 设置相对定位，便于内部文字绝对定位 */
+    width: 100%; /* 确保在小屏幕上占满宽度 */
 }
 
 /* 漫画标题样式 - 固定在图片上方 */
@@ -90,16 +92,15 @@ body {
     padding: 10px;
     margin: 0;
     border-radius: 10px;
-    position: absolute;  /* 绝对定位 */
-    top: -40px;  /* 将标题移动到图片上方 */
+    position: relative;  /* 相对定位，位于图片上方 */
     width: 100%;  /* 宽度与图片容器一致 */
     text-align: center;  /* 居中对齐 */
 }
 
 /* 漫画图片样式 */
 .comic-image {
-    width: 100%;
-    max-width: 100%;
+    width: 100%;  /* 图片宽度占满容器 */
+    max-width: 100%;  /* 确保图片不会超出容器 */
     border: 5px solid #B0E0E6;
     border-radius: 10px;
     cursor: pointer;
@@ -143,15 +144,14 @@ body {
 /* 响应式设计：在屏幕宽度小于768px时应用 */
 @media (max-width: 768px) {
     body {
-        font-size: 0.9em;
         flex-direction: column;  /* 小屏幕上切换为纵向布局 */
     }
 
     .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: column;  /* 保持垂直排列 */
-        overflow-y: auto;  /* 允许竖直滚动 */
+        width: 100%;  /* 导航栏在小屏幕上占满宽度 */
+        max-height: 40vh; /* 限制高度，避免在小屏幕上占用过多空间 */
+        overflow-y: auto;  /* 启用垂直滚动 */
+        flex-direction: column; /* 确保内容竖直排列 */
     }
 
     .sidebar h2, .sidebar a {
@@ -166,15 +166,15 @@ body {
     }
 
     .comic-container {
-        flex-direction: column;
+        width: 100%; /* 小屏幕上占满宽度 */
     }
 
     .comic-title {
         font-size: 1.2rem;
-        top: -30px;  /* 调整小屏幕下标题的垂直位置 */
+        margin-top: 10px; /* 保持与图片的间距 */
     }
 
     .comic-image {
-        width: 100%;
+        width: 100%; /* 小屏幕上图片宽度占满容器 */
     }
 }

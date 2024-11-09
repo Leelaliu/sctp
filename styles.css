@@ -1,7 +1,7 @@
-/* 定义字体，设置字体名称、来源和样式 */
+/* 定义自定义字体 */
 @font-face {
     font-family: 'MyCuteFont';  /* 字体名称 */
-    src: url('font/LiuHuanKaTongShouShu1.5-2.ttf') format('truetype');  /* 字体文件路径及格式 */
+    src: url('font/LiuHuanKaTongShouShu1.5-2.ttf') format('truetype');  /* 字体文件路径和格式 */
     font-weight: bold;  /* 字体加粗 */
     font-style: normal;  /* 正常字体样式 */
 }
@@ -9,109 +9,122 @@
 /* 设置页面主体样式 */
 body {
     font-family: 'MyCuteFont', Arial, sans-serif;  /* 设置字体，优先使用自定义字体 */
-    background-color: #F0F8FF;  /* 背景色为淡蓝色 */
-    color: #333;  /* 字体颜色 */
+    background-color: #F0F8FF;  /* 背景颜色为淡蓝色 */
+    color: #333;  /* 字体颜色为深灰色 */
     display: flex;  /* 使用弹性布局 */
     flex-direction: row;  /* 横向排列子元素 */
+    margin: 0;  /* 去除默认外边距 */
+    padding: 0;  /* 去除默认内边距 */
+    box-sizing: border-box;  /* 统一计算边距方式，防止宽度计算混乱 */
 }
 
 /* 侧边栏样式 */
 .sidebar {
-    width: 50px;  /* 侧边栏宽度 */
-    padding: 20px;  /* 内边距 */
+    width: 15vw;  /* 使用视口宽度的15%，根据屏幕大小自适应 */
+    max-width: 200px;  /* 设置侧边栏的最大宽度 */
+    min-width: 80px;  /* 设置侧边栏的最小宽度，确保不会过窄 */
+    padding: 10px;  /* 内边距 */
     background-color: #E6F2FF;  /* 浅蓝色背景 */
-    border-right: 4px solid #A3C7E8;  /* 右边框为蓝色 */
-    height: 100vh;  /* 侧边栏高度为视口高度 */
-    position: sticky;  /* 使侧边栏在滚动时保持固定 */
-    top: 0;  /* 固定在顶部 */
+    border-right: 4px solid #A3C7E8;  /* 右侧蓝色边框 */
+    height: 100vh;  /* 高度占满视口 */
+    position: sticky;  /* 滚动时保持固定 */
+    top: 0;  /* 固定在页面顶部 */
+    display: flex;  /* 使用弹性布局 */
+    flex-direction: column;  /* 垂直排列内容 */
+    align-items: center;  /* 居中对齐内容 */
 }
 
 /* 侧边栏标题样式 */
 .sidebar h2 {
-    font-size: 24px;  /* 标题字体大小 */
-    color: #1E90FF;  /* 深蓝色字体 */
+    font-size: 1.5rem;  /* 标题字体大小 */
+    color: #1E90FF;  /* 深蓝色标题字体 */
     font-weight: bold;  /* 加粗字体 */
     padding: 10px;  /* 内边距 */
-    border-radius: 12px;  /* 圆角 */
-    display: inline-block;  /* 设置为内联块元素 */
+    border-radius: 12px;  /* 圆角效果 */
+    text-align: center;  /* 文字居中 */
 }
 
 /* 侧边栏链接样式 */
 .sidebar a {
-    display: block;  /* 使链接块级显示 */
+    display: block;  /* 链接块级显示，占据一行 */
     margin: 10px 0;  /* 上下外边距 */
-    font-size: 20px;  /* 字体大小 */
-    color: #4682B4;  /* 蓝色链接 */
+    font-size: 1.2rem;  /* 字体大小 */
+    color: #4682B4;  /* 蓝色字体 */
     text-decoration: none;  /* 去除下划线 */
     font-weight: bold;  /* 加粗字体 */
     padding: 8px;  /* 内边距 */
-    border-radius: 8px;  /* 圆角 */
+    border-radius: 8px;  /* 圆角效果 */
+    text-align: center;  /* 文本居中 */
 }
 
-/* 侧边栏链接的悬停效果 */
+/* 侧边栏链接悬停效果 */
 .sidebar a:hover {
-    color: #1E90FF;  /* 悬停时颜色变为深蓝 */
+    color: #1E90FF;  /* 悬停时变为深蓝色 */
 }
 
 /* 内容区域样式 */
 .content {
-    flex: 1;  /* 内容区域自适应宽度 */
+    flex: 1;  /* 内容区域填满剩余空间 */
     padding: 20px;  /* 内边距 */
     display: flex;  /* 使用弹性布局 */
-    flex-direction: column;  /* 垂直排列子元素 */
-    align-items: center;  /* 子元素水平居中 */
+    flex-direction: column;  /* 垂直排列内容 */
+    align-items: center;  /* 水平居中对齐内容 */
+    width: 100%;  /* 宽度占满可用空间 */
+    max-width: 100%;  /* 确保内容区域不会超过容器宽度 */
+    box-sizing: border-box;  /* 边距和宽度计算一致 */
 }
 
 /* 漫画容器样式 */
 .comic-container {
     max-width: 600px;  /* 最大宽度为600px */
-    margin-bottom: 20px;  /* 下边距 */
+    margin-bottom: 20px;  /* 底部外边距 */
     text-align: center;  /* 文本居中 */
-    display: flex;  /* 弹性布局 */
-    align-items: center;  /* 垂直居中对齐 */
-    justify-content: space-between;  /* 子元素之间留空 */
+    display: flex;  /* 使用弹性布局 */
+    align-items: center;  /* 垂直居中对齐内容 */
+    justify-content: space-between;  /* 内容间距均匀分布 */
 }
 
 /* 漫画标题样式 */
 .comic-title {
-    font-size: 24px;  /* 字体大小 */
+    font-size: 1.5rem;  /* 标题字体大小 */
     margin: 15px 0;  /* 上下外边距 */
-    color: #1E90FF;  /* 深蓝色 */
+    color: #1E90FF;  /* 深蓝色字体 */
     font-weight: bold;  /* 加粗字体 */
     padding: 10px;  /* 内边距 */
-    border-radius: 10px;  /* 圆角 */
+    border-radius: 10px;  /* 圆角效果 */
 }
 
 /* 漫画图片样式 */
 .comic-image {
     width: 100%;  /* 图片宽度占满容器 */
+    max-width: 100%;  /* 确保图片不会超出容器 */
     border: 5px solid #B0E0E6;  /* 浅蓝色边框 */
-    border-radius: 10px;  /* 圆角 */
-    cursor: pointer;  /* 鼠标悬停时显示为点击状态 */
-    transition: transform 0.2s;  /* 平滑的缩放过渡效果 */
+    border-radius: 10px;  /* 圆角效果 */
+    cursor: pointer;  /* 鼠标悬停时显示手型 */
+    transition: transform 0.2s;  /* 平滑缩放过渡效果 */
 }
 
-/* 图片悬停时放大效果 */
+/* 漫画图片悬停效果 */
 .comic-image:hover {
-    transform: scale(1.05);  /* 放大1.05倍 */
+    transform: scale(1.05);  /* 悬停时放大1.05倍 */
 }
 
 /* 弹出框（模态框）样式 */
 .modal {
     display: none;  /* 默认隐藏 */
     position: fixed;  /* 固定位置 */
-    z-index: 1;  /* 层级最高 */
-    padding-top: 100px;  /* 距离顶部100px */
-    left: 0;  /* 靠左 */
-    top: 0;  /* 靠上 */
-    width: 100%;  /* 占满全屏 */
-    height: 100%;  /* 占满全屏 */
+    z-index: 1;  /* 层级设置为1，确保在最上层 */
+    padding-top: 100px;  /* 顶部留空100px */
+    left: 0;  /* 左侧对齐 */
+    top: 0;  /* 顶部对齐 */
+    width: 100%;  /* 占满全屏宽度 */
+    height: 100%;  /* 占满全屏高度 */
     background-color: rgba(0, 0, 139, 0.8);  /* 深蓝色半透明背景 */
 }
 
 /* 模态框内容样式 */
 .modal-content {
-    margin: auto;  /* 内容居中 */
+    margin: auto;  /* 居中显示 */
     display: block;  /* 块级显示 */
     width: 80%;  /* 宽度为80% */
     max-width: 700px;  /* 最大宽度为700px */
@@ -120,52 +133,48 @@ body {
 /* 关闭按钮样式 */
 .close {
     position: absolute;  /* 绝对定位 */
-    top: 30px;  /* 距离顶部30px */
-    right: 40px;  /* 距离右边40px */
-    color: #FFF;  /* 文字为白色 */
-    font-size: 40px;  /* 字体大小40px */
+    top: 30px;  /* 距顶部30px */
+    right: 40px;  /* 距右侧40px */
+    color: #FFF;  /* 白色字体 */
+    font-size: 40px;  /* 字体大小 */
     font-weight: bold;  /* 加粗 */
-    cursor: pointer;  /* 鼠标悬停时显示为点击状态 */
+    cursor: pointer;  /* 鼠标悬停显示手型 */
 }
 
 /* 响应式设计：在屏幕宽度小于768px时应用 */
 @media (max-width: 768px) {
     body {
-        font-size: 0.67em;  /* 缩小字体大小 */
+        font-size: 0.9em;  /* 缩小字体大小 */
+        flex-direction: column;  /* 切换为垂直布局 */
     }
 
-    /* 侧边栏样式调整 */
     .sidebar {
-        padding: 0 13px;  /* 左右内边距减少 */
+        width: 100%;  /* 侧边栏宽度自适应 */
+        height: auto;  /* 高度自动 */
+        flex-direction: row;  /* 水平排列内容 */
+        overflow-x: auto;  /* 内容超出时横向滚动 */
     }
 
-    .sidebar h2 {
-        font-size: 16px;  /* 标题字体缩小 */
-    }
-
-    .sidebar a {
-        font-size: 13px;  /* 链接字体缩小 */
-        padding: 5px 5px;  /* 内边距缩小 */
+    .sidebar h2, .sidebar a {
+        font-size: 1rem;  /* 缩小字体大小 */
+        padding: 5px;  /* 减小内边距 */
         white-space: nowrap;  /* 阻止文字换行 */
     }
 
-    /* 漫画标题字体调整 */
-    .comic-title {
-        font-size: 16px;  /* 字体缩小 */
-    }
-
     .content {
-        padding: 13px;  /* 内容区域内边距缩小 */
+        padding: 10px;  /* 减小内边距 */
+        width: 100%;  /* 占满可用宽度 */
     }
 
-    /* 隐藏菜单文本 */
-    .menu-text {
-        display: none;  /* 小屏幕上隐藏菜单文本 */
+    .comic-container {
+        flex-direction: column;  /* 切换为垂直布局 */
     }
-}
 
-/* 调整漫画标题和图片布局 */
-.comic-title {
-    font-size: 12px;  /* 小字体 */
-    margin-left: 2px;  /* 留出间距 */
+    .comic-title {
+        font-size: 1.2rem;  /* 缩小字体 */
+    }
+
+    .comic-image {
+        width: 100%;  /* 图片宽度占满容器 */
+    }
 }
